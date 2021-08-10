@@ -35,4 +35,3 @@ alias dcb='dc build'
 alias dcr='dc restart'
 alias dcrm='dc rm'
 alias dcre='dc rm $(docker ps -a -q --filter "status=exited")'
-

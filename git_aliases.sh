@@ -13,4 +13,3 @@ alias gl='g pull'
 alias gd='g diff'
 alias gco='g checkout'
 alias glg='g log –stat'
-
