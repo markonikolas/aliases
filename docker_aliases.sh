@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Docker
 alias docker='sudo docker'
 alias dsp='docker stop'
