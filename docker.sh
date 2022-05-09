@@ -41,6 +41,7 @@ alias dcb='dcpall; docker-compose build'
 alias dcr='docker-compose restart'
 alias dcrm='dcpall; docker-compose rm'
 alias dcre='docker-compose rm $(docker ps -a -q --filter "status=exited")'
+alias dcps='docker-compose ps'
 alias dcl="docker-compose exec --user $(id -u):$(id -g) web /bin/bash"
 alias dcdebug="docker-compose down && docker-compose run --service-ports web"
 alias dclc="dockerlogin"
