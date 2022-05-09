@@ -89,8 +89,7 @@ dockerlogin() {
 
 docker_stop_all_containers() {
   if ! [[ $(docker stop $(dpsq) 2> /dev/null) ]]; then
-    echo No containers are running, skipping...
     return
   fi
-  echo All active containers are stopped, continuing..
+  echo Stopping active containers
 }
