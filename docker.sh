@@ -46,7 +46,7 @@ alias dcl="docker-compose exec --user $(id -u):$(id -g) web /bin/bash"
 alias dcdebug="docker-compose down && docker-compose run --service-ports web"
 alias dclc="dockerlogin"
 alias dwp="docker_wpcli"
-alias dstpall='docker_stop_all_containers'
+alias dcpall='docker_stop_all_containers'
 
 docker_wpcli() {
   declare ARGS
@@ -90,6 +90,7 @@ dockerlogin() {
 docker_stop_all_containers() {
   if ! [[ $(docker stop $(dpsq) 2> /dev/null) ]]; then
     echo No containers are running, skipping...
+    return
   fi
-    echo All active containers are stopped, continuing..
+  echo All active containers are stopped, continuing..
 }
