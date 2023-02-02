@@ -31,19 +31,19 @@ alias dip='di prune'
 alias dpa='dvp && dnp && dip'
 
 ## Docker Compose
-alias docker-compose='sudo docker-compose'
-alias dc='docker-compose'
-alias dcu='dcpall; docker-compose up'
-alias dcud='dcpall; docker-compose up -d'
-alias dcs='docker-compose stop'
-alias dcd='docker-compose down'
-alias dcb='dcpall; docker-compose build'
-alias dcr='docker-compose restart'
-alias dcrm='dcpall; docker-compose rm'
-alias dcre='docker-compose rm $(docker ps -a -q --filter "status=exited")'
-alias dcps='docker-compose ps'
-alias dcl="docker-compose exec --user $(id -u):$(id -g) web /bin/bash"
-alias dcdebug="docker-compose down && docker-compose run --service-ports web"
+alias docker compose='sudo docker compose'
+alias dc='docker compose'
+alias dcu='dcpall; docker compose up'
+alias dcud='dcpall; docker compose up -d'
+alias dcs='docker compose stop'
+alias dcd='docker compose down'
+alias dcb='dcpall; docker compose build'
+alias dcr='docker compose restart'
+alias dcrm='dcpall; docker compose rm'
+alias dcre='docker compose rm $(docker ps -a -q --filter "status=exited")'
+alias dcps='docker compose ps'
+alias dcl="docker compose exec --user $(id -u):$(id -g) web /bin/bash"
+alias dcdebug="docker compose down && docker compose run --service-ports web"
 alias dclc="dockerlogin"
 alias dwp="docker_wpcli"
 alias dcpall='docker_stop_all_containers'
@@ -77,13 +77,13 @@ docker_wpcli() {
   else
     ARGS=("$@")
   fi
-  docker-compose run --name wp_cli --rm wp_cli "${ARGS[@]}"
+  docker compose run --name wp_cli --rm wp_cli "${ARGS[@]}"
 }
 
 dockerlogin() {
   if [ -n "$1" ]
   then
-    docker-compose exec --user $(id -u):$(id -g) $1 /bin/bash
+    docker compose exec --user $(id -u):$(id -g) $1 /bin/bash
   fi
 }
 
